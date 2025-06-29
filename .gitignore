@@ -1,0 +1,16 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Output files
+data/schedules.json
+data/pagina.html
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db

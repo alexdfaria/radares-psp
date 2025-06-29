@@ -1,0 +1,44 @@
+[
+  {
+    "district": "MADEIRA",
+    "date": "6/jun/25",
+    "dateiso": "2025-06-06",
+    "hour": "08h00/12h00",
+    "local": "VR/1 Km 6.0 Oeste/Este – Quinta Grande / Câmara de Lobos"
+  },
+  {
+    "district": "MADEIRA",
+    "date": "6/jun/25",
+    "dateiso": "2025-06-06",
+    "hour": "08h30/11h30",
+    "local": "VR1, KM 33.3, Santa Catarina, junto Quinta Américo Durão / Santa Cruz"
+  },
+  {
+    "district": "MADEIRA",
+    "date": "18/jun/25",
+    "dateiso": "2025-06-18",
+    "hour": "18h00/22h00",
+    "local": "VR/1 Km 9.4 Este/Oeste – Câmara de Lobos"
+  },
+  {
+    "district": "MADEIRA",
+    "date": "19/jun/25",
+    "dateiso": "2025-06-19",
+    "hour": "10h00/12h30",
+    "local": "Rua 5 de Outubro / Funchal"
+  },
+  {
+    "district": "MADEIRA",
+    "date": "25/jun/25",
+    "dateiso": "2025-06-25",
+    "hour": "16h30/19h30",
+    "local": "VE1 / Moinhos/Faial/Santana"
+  },
+  {
+    "district": "MADEIRA",
+    "date": "30/jun/25",
+    "dateiso": "2025-06-30",
+    "hour": "09h00/13h00",
+    "local": "VR1 / km 37,7 / Piquinho – Machico"
+  }
+]
