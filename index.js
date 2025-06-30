@@ -4,14 +4,18 @@ const { sendTelegramMessage } = require('./scripts/sendTelegram');
 const radarData = require('./data/radares.json');
 const { generateSchedules } = require('./scripts/generateSchedules');
 
+const { checkAndSendRadarAlerts } = require('./scripts/radarAlerts');
+
 (async () => {
     const mensagem = "📢 Radar agendado em Aveiro: 4/jun/25 - 08h00/12h00 - Avenida da Universidade";
 
     //await sendTelegramMessage(mensagem);
 
     //console.log(parseDate("4/jun/25")); // "2025-06-04"
-    await fetchRadares();
-    await generateSchedules(radarData);
+    //await fetchRadares();
+    //await generateSchedules(radarData);
+
+    await checkAndSendRadarAlerts();
 
   //process.exit(0);
 })();

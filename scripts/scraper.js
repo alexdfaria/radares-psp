@@ -129,5 +129,4 @@ $('tr').each((i, row) => {
 
 module.exports = {
   fetchRadares,
-  parseDate,
 };

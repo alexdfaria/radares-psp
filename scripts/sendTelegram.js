@@ -15,7 +15,7 @@ async function sendTelegramMessage(texto) {
     const res = await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
       chat_id: chatId,
       text: texto,
-      schedule_date: futureTime,
+      parse_mode: "HTML"
     });
 
     console.log('✅ Resposta da API:', res.data);
@@ -30,5 +30,5 @@ async function sendTelegramMessage(texto) {
 }
 
 module.exports = {
-  sendTelegramMessage
+  sendTelegramMessage,
 };

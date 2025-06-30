@@ -21,8 +21,14 @@ function parseDate(dateStr) {
   return `${year}-${month}-${day}`.toString();
 }
 
+function formatDateToDMY(isoDate) {
+  const [year, month, day] = isoDate.split("-");
+  return `${day}/${month}/${year}`;
+}
+
 
 module.exports = {
   cleanText,
+  formatDateToDMY,
   parseDate,
 };
