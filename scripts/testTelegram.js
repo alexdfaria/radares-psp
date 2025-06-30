@@ -1,3 +1,7 @@
 const { sendTelegramMessage } = require('./sendTelegram');
 
-await sendTelegramMessage("✅ Test from GitHub Actions!");
+async function main() {
+  await sendTelegramMessage("✅ Test from GitHub Actions!");
+}
+
+main();
