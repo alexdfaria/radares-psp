@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { formatDateToDMY } = require('./dataProcessor');
 
 /**
  * Converts an ISO date (YYYY-MM-DD) to a UNIX timestamp for 07:00 AM in Portugal (UTC+1)
@@ -20,17 +21,18 @@ function getPortugal7amTimestamp(isoDate) {
  */
 function generateSchedules(radarData) {
   const schedules = radarData.map((r) => {
-    const message = `📢 Scheduled radar in Madeira: ${r.date} - ${r.hour} - ${r.local}`;
-    const timestamp = getPortugal7amTimestamp(r.dateiso);
-    return { message, timestamp };
+    const message = `🚨🚓 ALERTA Radar 🚓🚨\n\n📢 Agendado para <b>HOJE</b> (${formatDateToDMY(r.dateiso)})\n\n<b>Horário:</b> ${r.hour}\n<b>Local: </b>${r.local}`;
+    //const timestamp = getPortugal7amTimestamp(r.dateiso);
+    const date = r.dateiso;
+    return { message, date };
   });
 
   // Write to file
-  fs.writeFileSync(
+/*   fs.writeFileSync(
     path.join(__dirname, '../data/schedules.json'),
     JSON.stringify(schedules, null, 2),
     'utf8'
-  );
+  ); */
 
   console.log('✅ Schedules generated successfully!');
 

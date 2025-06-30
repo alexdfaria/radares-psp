@@ -1,0 +1,28 @@
+name: Schedule Telegram Messages
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Runs everyday at 06:00 UTC (07:00 for Portugal — UTC+1)
+  workflow_dispatch:     # To enable a workflow to be triggered manually
+
+jobs:
+  schedule:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run radar alert script
+        run: node scripts/radarAlerts.js
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

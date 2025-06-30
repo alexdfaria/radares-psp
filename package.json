@@ -5,10 +5,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["radar", "madeira", "psp", "scraper", "automation"],
+  "author": "Alex Faria",
+  "license": "GPL-3.0",
+  "description": "Scrapes the official PSP portal to collect radar data and generates scheduled alerts.",
   "dependencies": {
     "axios": "^1.10.0",
     "cheerio": "^1.1.0",
