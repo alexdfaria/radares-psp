@@ -3,7 +3,7 @@ permissions: write-all
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Runs everyday at 06:00 UTC (07:00 for Portugal — UTC+1)
+    - cron: '52 5 * * *'  # Runs everyday at 06:00 UTC (07:00 for Portugal — UTC+1)
   workflow_dispatch:     # To enable a workflow to be triggered manually
 
 jobs:
