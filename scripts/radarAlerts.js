@@ -5,22 +5,35 @@ const { generateSchedules } = require('./generateSchedules');
 
 const radarData = require('../data/radares.json');
 
-function checkAndSendRadarAlerts() {
+async function checkAndSendRadarAlerts() {
   //const dataPath = path.join(__dirname, '../data/schedules.json');
   //const schedules = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+  try {
+    console.log("🔍 Executing radarAlerts.js...");
 
-  const schedules = generateSchedules(radarData);
+    const schedules = await generateSchedules(radarData);
 
-  const today = new Date().toISOString().slice(0, 10); // "YYYY-MM-DD"
+    const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+    console.log("📅 Today:", today);
 
-  console.log("hoje: " + today)
+    let found = false;
 
-  schedules.forEach(({ message, date }) => {
-    if (date === today) {
-        console.log(message + " date: " + date)
-      sendTelegramMessage(message);
+    for (const { message, date } of schedules) {
+        if (date === today) {
+            found = true;
+            console.log("📤 Sending:", message);
+            await sendTelegramMessage(message);
+        }
     }
-  });
+
+    if (!found) {
+      console.log("ℹ️ No scheduled radars for today.");
+    }
+
+  } catch (error) {
+    console.error("❌ Error in checkAndSendRadarAlerts:", error);
+    process.exit(1); // Fails for GitHub Actions
+  }
 }
 
 module.exports = {
