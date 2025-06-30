@@ -2,7 +2,7 @@ name: Schedule Telegram Messages
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Runs everyday at 06:00 UTC (07:00 for Portugal — UTC+1)
+    - cron: '0 2 * * *'  # Runs everyday at 06:00 UTC (07:00 for Portugal — UTC+1)
   workflow_dispatch:     # To enable a workflow to be triggered manually
 
 jobs:
