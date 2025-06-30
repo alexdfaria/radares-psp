@@ -2,6 +2,11 @@ function cleanText(text) {
   return text.replace(/[\u200B-\u200D\uFEFF]/g, '').trim();
 }
 
+function formatDateToDMY(isoDate) {
+  const [year, month, day] = isoDate.split("-");
+  return `${day}/${month}/${year}`;
+}
+
 function parseDate(dateStr) {
   const months = {
     jan: '01', fev: '02', mar: '03', abr: '04', mai: '05', jun: '06',
@@ -20,12 +25,6 @@ function parseDate(dateStr) {
 
   return `${year}-${month}-${day}`.toString();
 }
-
-function formatDateToDMY(isoDate) {
-  const [year, month, day] = isoDate.split("-");
-  return `${day}/${month}/${year}`;
-}
-
 
 module.exports = {
   cleanText,
